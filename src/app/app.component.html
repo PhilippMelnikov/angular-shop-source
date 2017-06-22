@@ -1,0 +1,75 @@
+<!--The whole content below can be removed with the new code.-->
+<!-- <md-sidenav-container> -->
+<md-toolbar color="primary" class="md-toolbar-tools my-toolbar" [@fadeInOut]="'true'">
+
+  <button md-icon-button (click)="openCloseSidenav()" *ngIf="!largeScreen">
+		<md-icon>menu</md-icon>
+	</button>
+  <span class="fill-space" flex *ngIf="!largeScreen"></span>
+  <img class="angular-logo" src="./assets/icons/angular-white-transparent.svg" alt="angular">
+  <span id="title">{{title}}</span>
+
+</md-toolbar>
+<md-sidenav-container [@fadeInOut]="'true'">
+  <md-sidenav #start [mode]="largeScreen ? 'side' : 'over'" [opened]="largeScreen || sidenavIsOpened">
+    <tree-root [nodes]="productsTree" [options]="treeOptions">
+    </tree-root>
+  </md-sidenav>
+  <div class="my-content">
+    <div class="product-container" *ngIf="currentProduct" [@fadeInOut]="productViewFadeIn">
+      <div class="section">
+        <div class="product-title">{{currentProduct.title}}</div>
+      </div>
+      <div class="section">
+        <div class="price"><span>Price:</span> {{currentProduct.price}}$</div>
+      </div>
+      <div class="section">
+        <button md-raised-button color="primary" class="add-to-cart-button" click="()=>{}">
+          <i class="material-icons">shopping_cart</i>
+          Add to cart
+        </button>
+        <div class="additional-info">
+          <div class="info-item" *ngIf="currentProduct.pages">
+            <i class="material-icons">library_books</i>
+            <div class="content">
+              <div class="info-title">Pages</div>
+              <div class="info-value">{{currentProduct.pages}}</div>
+            </div>
+          </div>
+          <div class="info-item" *ngIf="currentProduct.language">
+            <i class="material-icons">code</i>
+            <div class="content">
+              <div class="info-title">Language</div>
+              <div class="info-value">{{currentProduct.language}}</div>
+            </div>
+          </div>
+          <div class="info-item" *ngIf="currentProduct.min_age">
+            <i class="material-icons">pan_tool</i>
+            <div class="content">
+              <div class="info-title">Age</div>
+              <div class="info-value" id="min-age">{{currentProduct.min_age}}+</div>
+            </div>
+          </div>
+          <div class="info-item" *ngIf="currentProduct.main_ingredient">
+            <i class="material-icons">local_dining</i>
+            <div class="content">
+              <div class="info-title">Main ingredient</div>
+              <div class="info-value">Chicken</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="material-icons">subject</i>
+            <div class="content">
+              <div class="info-title">Category</div>
+              <div class="info-value">{{currentProduct.category}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="extra-info">
+        <h4>Description:</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, et voluptatum delectus eveniet fugit nemo quae temporibus est necessitatibus. Omnis quo in cum tempore, nihil, excepturi quibusdam voluptate accusantium obcaecati.</p>
+      </div>
+    </div>
+  </div>
+</md-sidenav-container>

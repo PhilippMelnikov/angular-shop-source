@@ -1,0 +1,212 @@
+/* You can add global styles to this file, and also import other style files */
+
+html{
+  overflow: hidden;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", sans-serif;
+}
+.wrapper{
+  min-height: 100vh;
+}
+.my-content{
+}
+md-sidenav-container{
+  padding-bottom: 65px;
+  margin-top: 64px !important;
+}
+.my-toolbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.store-title{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+.angular-logo{
+  height: 60%;
+  margin-right: 5px;
+}
+.fill-space{
+  flex: 1 1 auto;
+}
+md-toolbar-row {
+  align-items: center;
+}
+html, body, app-root, md-sidenav-container, .my-content {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+md-sidenav{
+	width: 360px !important;
+  padding: 0;
+}
+.mat-sidenav{
+  height: calc(100% - 60px) !important;
+}
+.mat-sidenav-opened{
+	box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}
+
+/*tree*/
+.node-wrapper{
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center !important;
+  font-family: "Helvetica Neue", sans-serif;
+  border: 1px solid rgba(0,0,0,0.15);
+}
+.node-content-wrapper:hover{
+  background-color: rgba(0,0,0,0) !important;
+}
+tree-viewport{
+  overflow: inherit !important;
+  height: calc(100% - 40px) !important;
+}
+tree-node-expander{
+  float: right;
+}
+.tree-node-leaf{
+  display: block;
+}
+
+.node-content-wrapper{
+  width: calc(100% - 35px);
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+.node-content-wrapper:hover{
+  box-shadow: none !important;
+}
+.tree-node-level-1 .node-content-wrapper{
+  padding-left: 15px;
+}
+.tree-node-level-2 .node-content-wrapper{
+  padding-left: 30px;
+}
+.tree-node-level-3 .node-content-wrapper{
+  padding-left: 45px;
+}
+.tree-node-level-4 .node-content-wrapper{
+  padding-left: 60px;
+}
+.tree-node-level-4{
+  tree-node-content{
+    display: block;
+  }
+}
+.toggle-children{
+  background-image: url(./assets/icons/chevron-down.png) !important;
+  height: 20px !important;
+  width: 35px !important;
+  transition: transform 0.2s ease-in;
+}
+.toggle-children-wrapper-expanded .toggle-children {
+    transform: rotate(180deg) !important;
+}
+
+/*Product view*/
+.product-container{
+  padding: 0px 15px;
+}
+.section{
+  padding: 30px 0;
+  border-bottom: 1px solid #ccc;
+}
+.product-title{
+  font-size: 25px;
+  font-weight: 600;
+}
+.price{
+  font-size: 38px;
+}
+.price span{
+  font-size: 25px;
+  font-weight: 600;
+  color: rgba(0,0,0,0.5);
+}
+.add-to-cart-button{
+  line-height: 50px !important;
+  margin-bottom: 35px !important;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+.additional-info{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+}
+.info-item{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: flex-start;
+}
+.info-item i{
+  margin-right: 25px;
+  font-size: 28px;
+}
+.info-item .content{
+  font-size: 18px;
+}
+.info-title{
+  margin-bottom: 5px;
+}
+.info-value{
+  color: rgba(0,0,0, 0.5);
+}
+.extra-info p{
+  margin-bottom: 40px;
+}
+@media only screen and (max-width: 768px){
+
+
+}
+@media only screen and (max-width: 540px){
+  md-sidenav-container{
+    margin-top: 54px !important;
+  }
+  .mat-sidenav{
+    height: calc(100% - 50px) !important;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  md-sidenav{
+  	width: 320px !important;
+  }
+
+  .info-item{
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-item i{
+    margin-right: 0;
+    margin-bottom: 10px;;
+  }
+  .info-title{
+    display: none;
+  }
+  #min-age{
+    margin-left: 7px;
+  }
+
+
+}
+
+@media only screen and (max-width: 320px){
+  md-sidenav{
+  	width: 260px !important;
+  }
+}

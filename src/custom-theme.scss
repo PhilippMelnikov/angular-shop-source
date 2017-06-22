@@ -1,0 +1,112 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$custom-light-blue: (
+ 50 : #e4f2fe,
+ 100 : #bce0fb,
+ 200 : #90cbf9,
+ 300 : #64b6f7,
+ 400 : #42a6f5,
+ 500 : #2196f3,
+ 600 : #1d8ef1,
+ 700 : #1883ef,
+ 800 : #1479ed,
+ 900 : #0b68ea,
+ A100 : #ffffff,
+ A200 : #e1ecff,
+ A400 : #aeccff,
+ A700 : #95bcff,
+ contrast: (
+     50 : #000000,
+     100 : #000000,
+     200 : #000000,
+     300 : #000000,
+     400 : #000000,
+     500 : #ffffff,
+     600 : #ffffff,
+     700 : #ffffff,
+     800 : #ffffff,
+     900 : #ffffff,
+     A100 : #000000,
+     A200 : #000000,
+     A400 : #000000,
+     A700 : #000000,
+ )
+);
+
+$custom-orange: (
+50 : #fef6ed,
+   100 : #fce8d3,
+   200 : #fbd9b5,
+   300 : #f9c997,
+   400 : #f7be81,
+   500 : #f6b26b,
+   600 : #f5ab63,
+   700 : #f3a258,
+   800 : #f2994e,
+   900 : #ef8a3c,
+   A100 : #ffffff,
+   A200 : #ffffff,
+   A400 : #ffe7d5,
+   A700 : #ffd8bc,
+   contrast: (
+       50 : #000000,
+       100 : #000000,
+       200 : #000000,
+       300 : #000000,
+       400 : #000000,
+       500 : #000000,
+       600 : #000000,
+       700 : #000000,
+       800 : #000000,
+       900 : #000000,
+       A100 : #000000,
+       A200 : #000000,
+       A400 : #000000,
+       A700 : #000000,
+   )
+);
+
+$custom-red: (
+   50 : #fbeded,
+   100 : #f6d1d1,
+   200 : #f0b3b3,
+   300 : #e99494,
+   400 : #e57d7d,
+   500 : #e06666,
+   600 : #dc5e5e,
+   700 : #d85353,
+   800 : #d34949,
+   900 : #cb3838,
+   A100 : #ffffff,
+   A200 : #ffe2e2,
+   A400 : #ffafaf,
+   A700 : #ff9696,
+   contrast: (
+       50 : #000000,
+       100 : #000000,
+       200 : #000000,
+       300 : #000000,
+       400 : #000000,
+       500 : #000000,
+       600 : #000000,
+       700 : #ffffff,
+       800 : #ffffff,
+       900 : #ffffff,
+       A100 : #000000,
+       A200 : #000000,
+       A400 : #000000,
+       A700 : #000000,
+   )
+);
+
+
+
+$custom-theme-primary: mat-palette($custom-light-blue);
+$custom-theme-accent: mat-palette($custom-orange);
+$custom-theme-warn: mat-palette($custom-red);
+
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+@include angular-material-theme($custom-theme);
