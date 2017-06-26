@@ -18,5 +18,5 @@ export class WindowService {
     } else {
         return false;
     }
-  }
+  };
 }

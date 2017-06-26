@@ -2,7 +2,7 @@
 <!-- <md-sidenav-container> -->
 <md-toolbar color="primary" class="md-toolbar-tools my-toolbar" [@fadeInOut]="'true'">
 
-  <button md-icon-button (click)="openCloseSidenav()" *ngIf="!largeScreen">
+  <button md-icon-button (click)="start.toggle()" *ngIf="!largeScreen">
 		<md-icon>menu</md-icon>
 	</button>
   <span class="fill-space" flex *ngIf="!largeScreen"></span>
@@ -10,7 +10,7 @@
   <span id="title">{{title}}</span>
 
 </md-toolbar>
-<md-sidenav-container [@fadeInOut]="'true'">
+<md-sidenav-container [ngStyle]="{'min-height': winHeight}" style="height: 100%" [@fadeInOut]="'true'">
   <md-sidenav #start [mode]="largeScreen ? 'side' : 'over'" [opened]="largeScreen || sidenavIsOpened">
     <tree-root [nodes]="productsTree" [options]="treeOptions">
     </tree-root>

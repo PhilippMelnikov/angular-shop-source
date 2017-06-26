@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { TREE_ACTIONS, KEYS, IActionMapping } from 'angular-tree-component';
+import { MdSidenav } from '@angular/material';
 import { DataService } from "./data-service/data.service"
 
 import {fadeInOut} from './FadeInOutAnimation/fadeInOut';
@@ -11,12 +12,15 @@ import { WindowService} from './window-service/window.service';
   styleUrls: ['./app.component.css'],
   animations: [fadeInOut()]
 })
+
 export class AppComponent {
+  @ViewChild('start') sidenav: MdSidenav;;
   title = 'Angular Shop';
   productsTree = [];
   currentProduct : any;
   sidenavMode = 'side';
   sidenavIsOpened = false;
+  winHeight: string;
   productViewFadeIn = 'fadeIn';
   actionMapping: IActionMapping = {
     mouse: {
@@ -26,7 +30,7 @@ export class AppComponent {
           if(node.data.code != this.currentProduct.code){
             this.productViewFadeIn = 'fadeOut';
             if(!this.largeScreen){
-              this.openCloseSidenav();
+              this.sidenav.toggle();
             }
             // For animation
             setTimeout(()=>{
@@ -66,6 +70,8 @@ export class AppComponent {
     this.windowRef = this.WindowService.nativeWindow();
     this.windowRef.onresize = ()=>{
       this.largeScreen = this.WindowService.isLargeScreen();
+      this.winHeight = this.WindowService.nativeWindow().innerHeight + 'px';
+
     };
 
     // IeHack
