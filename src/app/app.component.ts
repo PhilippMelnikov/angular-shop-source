@@ -75,8 +75,7 @@ export class AppComponent {
     };
 
     // IeHack
-    let myWind = this.WindowService.nativeWindow()
-    let el = myWind.document.getElementsByClassName('my-toolbar');
+    let el = this.windowRef.document.getElementsByClassName('my-toolbar');
     setTimeout(()=>{
       el[0].click();
     },100);
